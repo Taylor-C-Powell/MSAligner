@@ -1,3 +1,11 @@
+# Taylor C. Powell
+# q9.py
+# 2025-9-2
+
+# --------------------------------- FUNCTIONS -----------------------------------------------
+
+# FUNCTION: print_grid
+# This function prints a grid of specified dimensions using ASCII characters.
 def print_grid(lines=3, columns=3):
     # IF input values are not integers, throw error
     if not isinstance(lines, int) or not isinstance(columns, int):
@@ -20,17 +28,47 @@ def print_grid(lines=3, columns=3):
         print("+----" * (columns-1) + "+")
         return
 
+
+# ------- TESTING -------
+
 print_grid()
+print()
+
 print_grid(4, 4)
+print()
+
 print_grid(2, 2)
+print()
+
 print_grid(2.0, 2.0)
+print()
+
 print_grid(2.5, 2.5)
+print()
+
 print_grid(2, 1)
+print()
+
 print_grid(2, 0)
+print()
+
 print_grid(1, 1)
+print()
+
 print_grid(0, 0)
+print()
+
 print_grid(-1, -1)
+print()
+
 print_grid(10)
+print()
+
 print_grid(10, 10)
+print()
+
 print_grid(3, 20)
+print()
+
 print_grid(100, 100)
+print()
