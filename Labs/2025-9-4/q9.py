@@ -67,8 +67,13 @@ print()
 print_grid(10, 10)
 print()
 
-print_grid(3, 20)
+print_grid(20, 20)
+print()
+
+print_grid(21, 21) 
 print()
 
 print_grid(100, 100)
 print()
+
+
