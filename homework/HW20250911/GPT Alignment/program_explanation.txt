@@ -1,0 +1,15 @@
+How the Program Works
+
+The program takes your FASTA file (HBA1_sequences.fna) containing the three sequences.
+
+It calls MUSCLE to perform a multiple sequence alignment (MSA). The aligned sequences are saved in HBA1_aligned.fna.
+
+The alignment is read back into Python with Biopython.
+
+A consensus sequence is computed, and similarity/difference scores are calculated as follows:
+
+Similarity Score: Percentage of columns in the alignment where all three sequences have the same nucleotide (ignoring gaps).
+
+Difference Score: Simply 100 – similarity.
+
+This approach mimics how bioinformatics alignment tools calculate conservation across multiple sequences, giving you an interpretable similarity/difference measure.

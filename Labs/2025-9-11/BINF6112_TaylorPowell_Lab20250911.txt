@@ -1,0 +1,19 @@
+# Title: nucleotide_to_amino.py
+
+## General Description
+This script will convert a nucleotide sequence into an amino acid sequence
+
+## Inputs
+- Input 1: nucleotide sequence
+
+## Outputs
+- Output 1: amino acid sequence
+
+## Process (step-by-step in plain English)
+1. Initialize an empty output string called 'output_string'
+2. Read an input nucleotide sequence from a file and place the sequence into a string called 'input_string'
+3. For each for each set of three characters (codon) in input_string
+4. Input the codon into a dictionary that that functions as a codon table, where codons are keys and amino acids are values
+5. Take the resulting amino acid value from the dictionary and append it to output_string
+6. Once the last codon from input_string has been read, return output_string
+

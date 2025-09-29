@@ -1,0 +1,27 @@
+Here’s the plan for your program:
+
+Input
+
+The script will read the FASTA file you provided (with headers for each organism).
+
+We’ll assume it’s in standard .fna FASTA format (which it is).
+
+Alignment
+
+We’ll use Biopython’s Bio.Align.Applications to call MUSCLE (a widely used multiple sequence aligner).
+
+MUSCLE is lightweight and good for 3 sequences. If MUSCLE isn’t installed, you could easily swap in ClustalOmega.
+
+Scoring
+
+After alignment, we’ll compute:
+
+A similarity score: percentage identity across aligned positions.
+
+A difference score: percentage of mismatches (including gaps).
+
+Output
+
+The alignment will be printed.
+
+The similarity and difference scores will be reported.
