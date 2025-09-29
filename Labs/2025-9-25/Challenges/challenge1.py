@@ -21,5 +21,9 @@ class Challenge1:
             return "Middle amino acid is: " + aa_seq[(len(aa_seq)-1)//2]
 
 if __name__ == "__main__":
-    challenge = Challenge1("MDIDPYKEFGATVELLSFLPSDFFPSVRDLLDTASALYREALESPEHCSPHHTALRQAILCWGELMTLATWVGNNLEDPASRDLVVNYVNTNMGLKIRQLLWFHISCLTFGRETVLEYLVSFGVWIRTPPAYRPPNAPILSTLPETTVVRRRDRGRSPRRRTPSPRRRRSQSPRRRRSQSRESQC")
+    with open('Labs/2025-9-25/Challenges/data/HBc.faa', 'r') as fasta_file:
+        sequence = ''.join(line.rstrip('\n') for line in fasta_file.readlines()[1:])
+    challenge = Challenge1(sequence)
     print(challenge.midaa(challenge.aa_seq))
+
+
