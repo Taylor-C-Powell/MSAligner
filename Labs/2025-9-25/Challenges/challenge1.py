@@ -2,7 +2,7 @@
 
 class Challenge1:
     """
-    A class to encapsulate the solution for Challenge X.
+    A class to encapsulate the solution for Challenge 1.
     """
 
     def __init__(self, aa_seq: str):
