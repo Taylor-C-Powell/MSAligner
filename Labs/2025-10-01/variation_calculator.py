@@ -124,5 +124,5 @@ def main() -> None:
         sys.stdout(f"{i}\t{v:.3f}\n")
 
 
-if __main__ == "name":
+if __name__ == "__main__":
     main()
