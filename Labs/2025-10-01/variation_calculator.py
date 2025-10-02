@@ -37,7 +37,7 @@ class Alignment:
         """
         seq_dict = self._read_fasta(filepath)
 
-    def _read_fasta(filepath: str) -> Dict[str, str]:
+    def _read_fasta(self, filepath: str) -> Dict[str, str]:
         """
         Read a FASTA file and return a dictionary of sequences.
 
@@ -68,7 +68,7 @@ class Alignment:
                         seq_dict[seq_id] = "".join(seq_chunks)
         return seq_dict
 
-    def to_numpy_array() -> np.ndarray:
+    def to_numpy_array(self) -> np.ndarray:
         """
         Convert the alignment dictionary into a NumPy array.
 
@@ -82,27 +82,27 @@ class Alignment:
         return arr
 
 
-def calculate_variability(arr: np.ndarray) -> np.ndarray:
-    """
-    Calculate normalized variability for each alignment column.
+    def calculate_variability(self, arr: np.ndarray) -> np.ndarray:
+        """
+        Calculate normalized variability for each alignment column.
 
-    Parameters
-    ----------
-    arr : np.ndarray
-        Alignment array (num_sequences x alignment_length).
+        Parameters
+        ----------
+        arr : np.ndarray
+            Alignment array (num_sequences x alignment_length).
 
-    Returns
-    -------
-    np.ndarray
-        Normalized variability scores (range 0 to 1) for each position.
-    """
-    variation = []
-    for col in arr.T:  # iterate over columns
-        bases, counts = np.unique(col, return_counts=True)
-        variation.append(bases)  # number of unique bases
-        variation = np.array(variation, dtype=float)
-        normalized = variation - variation.min() / variation.max() - variation.min()
-    return normalized
+        Returns
+        -------
+        np.ndarray
+            Normalized variability scores (range 0 to 1) for each position.
+        """
+        variation = []
+        for col in arr.T:  # iterate over columns
+            bases, counts = np.unique(col, return_counts=True)
+            variation.append(bases)  # number of unique bases
+            variation = np.array(variation, dtype=float)
+            normalized = variation - variation.min() / variation.max() - variation.min()
+        return normalized
 
 
 def main() -> None:
@@ -116,7 +116,7 @@ def main() -> None:
     aln = Alignment(args.alignment)
     arr = aln.to_numpy_array()
 
-    variability = calculate_variability(arr)
+    variability = aln.calculate_variability(arr)
 
     # Print results to stdout
     sys.stdout("Position\tVariability\n")
