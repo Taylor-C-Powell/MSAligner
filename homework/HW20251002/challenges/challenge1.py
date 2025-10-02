@@ -8,20 +8,16 @@ class Challenge1:
     A class to encapsulate the solution for Challenge 1.
     """
 
-    def __init__(self, aa_seq: str):
+    def __init__(self, meta_dat_path: str, gene_dat_path: str):
         """
         Initialize the challenge with input data.
         :param data: Any input data needed for the challenge.
         """
-        self.aa_seq = aa_seq
+        self.meta_dat = open(meta_dat_path, 'r').readlines()
+        self.gene_dat = open(gene_dat_path, 'r').readlines()
 
-    def midaa(self, aa_seq: str) -> str:
-        if len(aa_seq) % 2 == 0:
-            
-            return "No middle amino acid"
-        else:
-            # print(len(aa_seq))
-            return "Middle amino acid is: " + aa_seq[(len(aa_seq)-1)//2]
+    def find_common_accessions(self):
+        print(self.gene_dat)
 
 if __name__ == "__main__":
-    pass
+    Challenge1("data/Challenge1_meta.dat", "data/Challenge1_gene.dat").find_common_accessions()
