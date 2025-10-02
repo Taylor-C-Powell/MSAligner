@@ -11,7 +11,7 @@ Variability is normalized so that:
 """
 
 import argparse
-import numpy
+import numpy as np
 import sys
 from typing import Dict, List
 
@@ -62,10 +62,10 @@ class Alignment:
                         seq_dict[seq_id] = "".join(seq_chunks)
                     seq_id = line[1:]
                     seq_chunks = []
-else:
-seq_chunks.append(line)
-if seq_id:
-seq_dict[seq_id] = "".join(seq_chunks)
+                else:
+                    seq_chunks.append(line)
+                    if seq_id:
+                        seq_dict[seq_id] = "".join(seq_chunks)
         return seq_dict
 
     def to_numpy_array() -> np.ndarray:
@@ -98,11 +98,11 @@ def calculate_variability(arr: np.ndarray) -> np.ndarray:
     """
     variation = []
     for col in arr.T:  # iterate over columns
-    bases, counts = np.unique(col, return_counts=True)
-    variation.append(bases)  # number of unique bases
-    variation = np.array(variation, dtype=float)
-    normalized = variation - variation.min() / variation.max() - variation.min()
-    return
+        bases, counts = np.unique(col, return_counts=True)
+        variation.append(bases)  # number of unique bases
+        variation = np.array(variation, dtype=float)
+        normalized = variation - variation.min() / variation.max() - variation.min()
+    return normalized
 
 
 def main() -> None:
