@@ -31,11 +31,25 @@ class Challenge1:
         common_accessions = [acc for acc in meta_accessions if any(acc in g_acc for g_acc in genome_accessions)]
         return common_accessions
     
-    # Output common accessions to CSV file
+    # Find accesions that aren't shared between metadata and genome data
+    def find_unique_accessions(self):
+        meta_accessions = self.compile_metdat_accesions()
+        genome_accessions = self.compile_genome_accessions()
+        unique_meta = [acc for acc in meta_accessions if not any(acc in g_acc for g_acc in genome_accessions)]
+        unique_genome = [g_acc for g_acc in genome_accessions if not any(g_acc.strip(">").startswith(acc) for acc in meta_accessions)]
+        return unique_meta, unique_genome
+    
+    # Output results to CSV file
     def csv_output(self, output_path: str):
         with open(output_path, 'w') as out_file:
             out_file.write("Common Accessions\n")
             for acc in self.find_common_accessions():
+                out_file.write(f"{acc}\n")
+            out_file.write("\nUnique Metadata Accessions\n")
+            for acc in self.find_unique_accessions()[0]:
+                out_file.write(f"{acc}\n")
+            out_file.write("\nUnique Genome Accessions\n")
+            for acc in self.find_unique_accessions()[1]:
                 out_file.write(f"{acc}\n")
 
 # Main function to run the challenge
