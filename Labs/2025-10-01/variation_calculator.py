@@ -26,7 +26,7 @@ class Alignment:
         Dictionary of sequences, with IDs as keys and sequences as values.
     """
 
-    def _init_(self, filepath: str) -> None:
+    def __init__(self, filepath: str) -> None:
         """
         Initialize the Alignment by reading sequences from a FASTA file.
 
@@ -35,7 +35,7 @@ class Alignment:
         filepath : str
             Path to the FASTA alignment file.
         """
-        seq_dict = self._read_fasta(filepath)
+        self.seq_dict = self._read_fasta(filepath)
 
     def _read_fasta(self, filepath: str) -> Dict[str, str]:
         """
@@ -99,9 +99,9 @@ class Alignment:
         variation = []
         for col in arr.T:  # iterate over columns
             bases, counts = np.unique(col, return_counts=True)
-            variation.append(bases)  # number of unique bases
-            variation = np.array(variation, dtype=float)
-            normalized = variation - variation.min() / variation.max() - variation.min()
+            variation.append(len(bases))  # number of unique bases
+        variation = np.array(variation, dtype=float)
+        normalized = (variation - variation.min()) / (variation.max() - variation.min())
         return normalized
 
 
@@ -110,7 +110,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Calculate normalized variability per alignment position."
     )
-    parser.add_argument("alignment", help="Path to FASTA alignment file")
+    parser.add_argument("alignment", help="./Labs/2025-10-01/spike.aln")
     args = parser.parse_args()
 
     aln = Alignment(args.alignment)
@@ -119,9 +119,9 @@ def main() -> None:
     variability = aln.calculate_variability(arr)
 
     # Print results to stdout
-    sys.stdout("Position\tVariability\n")
+    print("Position\tVariability\n")
     for i, v in enumerate(variability, start=1):
-        sys.stdout(f"{i}\t{v:.3f}\n")
+        print(f"{i}\t{v:.3f}\n")
 
 
 if __name__ == "__main__":
