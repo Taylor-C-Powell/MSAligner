@@ -78,7 +78,7 @@ class Alignment:
             Array of shape (num_sequences, alignment_length).
         """
         sequences = self.seq_dict.values()
-        arr = np.array([seq for seq in sequences])
+        arr = np.array([list(seq) for seq in sequences])
         return arr
 
 
@@ -97,6 +97,7 @@ class Alignment:
             Normalized variability scores (range 0 to 1) for each position.
         """
         variation = []
+        print(arr)
         for col in arr.T:  # iterate over columns
             bases, counts = np.unique(col, return_counts=True)
             variation.append(len(bases))  # number of unique bases
@@ -118,10 +119,14 @@ def main() -> None:
 
     variability = aln.calculate_variability(arr)
 
-    # Print results to stdout
-    print("Position\tVariability\n")
-    for i, v in enumerate(variability, start=1):
-        print(f"{i}\t{v:.3f}\n")
+    # Print results
+    sys.stdout.write("Position\tVariability\n")
+    with open("./Labs/2025-10-01/variability.tsv", "a", encoding="utf-8") as out:
+        for i, v in enumerate(variability, start=1):
+            sys.stdout.write(f"{i}\t{v:.3f}\n")
+            out.write(f"{i}\t{v:.3f}\n")
+
+
 
 
 if __name__ == "__main__":
