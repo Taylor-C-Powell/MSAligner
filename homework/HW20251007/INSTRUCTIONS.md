@@ -6,46 +6,46 @@ The main script (`main.py`) requires a custom package, in `newu2`, that contains
 
 ## Student's details
 
-- **Name:** Add your name here
-- **UNC Charlotte's ID (800 number):** Add your ID here
-- **UNC Charlotte's email:** add your institutional email here
+- **Name:** Taylor C. Powell
+- **UNC Charlotte's ID (800 number):** 801024945
+- **UNC Charlotte's email:** tpowel43@charlotte.edu
 
 ## 1. Answer these questions
 
 ### 1.1. Explain why `newu2` has an empty file called `__init__.py`
 
-Add your response in here.
+The __init__.py file allows the python interpretor to more easily recognize that a directory is to be used as a python package. It's not required, but it helps with package initialization processes. 
 
 ### 1.2. Explain the function `read_fa` from `read.py` in plain English
 
-Add your response in here.
+The read_fa function takes a FASTA file as input and returns a formatted string. Each sequence contained within the input FASTA file contributes two lines to the ouput string: a header line containing a sequence ID, and a line containing a nucleotide/protein sequence. 
 
 ### 1.3. Explain the function `write_fa` from `write.py` in plain English
 
-Add your response in here.
+The write_fa function takes two lists as inputs: a list of sequence IDs and a list of their corresponding sequences. It then creates a FASTA file from the inputs and returns a string that represents the filepath to the newly created file. 
 
 ### 1.4. Explain the function `parse_fa` from `num.py` in plain English
 
-Add your response in here.
+The parse_fa function takes in a FASTA file (containing only two sequences) as input and returns a tuple containing the following items: the header of the first sequence, the header of the second sequence, a NumPy array containing the first sequence as a list of characters, a NumPy array containing the second sequence as a list of characters, and an empty matrix with dimensions corresponding to the lengths of each sequence plus one. For example, if the first sequence had 6 characters, and the second sequence had 7 characters, the empty array would have 7 columns and 8 rows.
 
 ### 1.5. Explain the function `fill_matrix` from `num.py` in plain English
 
-Add your response in here.
+The fill_matrix function takes in 6 inputs: an empty matrix, an array of characters representing the first sequence, an array of characters representing the second sequence, a match score, a mismatch score, and indel score. It returns a filled scoring matrix using the downpass portion from the Needleman-Wunsch algorithm using the input sequences and the scores from the input parameters. 
 
 ### 1.6. Explain the function `trace_matrix` from `num.py` in plain English
 
-Add your response in here.
+This function implements the traceback step from the Needleman-Wunsch algorithm. It takes in three input parameters, a filled scoring matrix from the fill_matrix function, and two NumPy arrays containing sequences represented by a list of characters. It returns a NumPy array with two rows, one for each aligned sequence.
 
 ### 1.7. Complete the table below
 
 | Match Cost | Mismatch Cost | InDel Cost | Expected Alignnment of Sequence 1 | Expected Alignnment of Sequence 2 |
-| --- | --- | --- | --- | --- |
+| +2 | +2 | +4 | GCATGCG------- | -------GATTACA |
 | +1 | -1 | -1 | GCA-TGCG | -GATTACA |
 | +1 | -1 | -10 | GCATGCG | GATTACA |
-| +1 | -2 | -1 | | |
-| +1 | -2 | -10 | | |
-| +1 | -10 | -1 | | |
-| -1 | +1 | +1 | | |
+| +1 | -2 | -1 | ---GCATGCG | GATT-AC-A- |
+| +1 | -2 | -10 | GCATGCG---- | ----GATTACA |
+| +1 | -10 | -1 | ---GCATGCG | GATT-AC-A- |
+| -1 | +1 | +1 | GCATGCG------- | -------GATTACA |
 
 ## 2. Complete these programming challenges
 
