@@ -79,6 +79,25 @@ class AlignmentRunner:
             filepath = self.aln_file
         )
 
+    def consensus(self) -> None:
+        """
+        Generate consensus string from the aligned sequences.
+        """
+        a1 = [str(x) for x in self.aln[0].tolist()]
+        a2 = [str(x) for x in self.aln[1].tolist()]
+
+        consensus_chars = []
+        for x, y in zip(a1, a2):
+            if x == y:
+                consensus_chars.append(x.upper())
+            elif x == '-':
+                consensus_chars.append(y.upper())
+            elif y == '-':
+                consensus_chars.append(x.upper())
+            else:
+                consensus_chars.append('N')
+        self.consensus_str = ''.join(consensus_chars)
+
 def parse_args() -> argparse.Namespace:
     """
     Parse command-line arguments for the program.
@@ -160,6 +179,8 @@ def main() -> None:
     sys.stdout.write(f"Done! Here is the resulting NumPy matrix:\n{runner.aln}\n")
     runner.write()
     sys.stdout.write(f"The alignment was written into {args.output}\n")
+    runner.consensus()
+    sys.stdout.write(f"The consensus string is:\n{runner.consensus_str}\n")
 
 if __name__ == "__main__":
     main()

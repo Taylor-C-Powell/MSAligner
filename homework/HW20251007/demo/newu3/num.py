@@ -217,3 +217,52 @@ def trace_matrix(
     aligned_seq2.reverse()
     
     return np.array([aligned_seq1, aligned_seq2])
+
+def find_consensus(
+    in_file: str,
+) -> str:
+    """
+    Generate a consensus string given two sequences in a FASTA file.
+
+    Parameters
+    ----------
+    in_file : str
+        Path to the input FASTA file.
+
+    Returns
+    -------
+    str
+        The consensus string generated from the two sequences.
+    """
+    # Read FASTA contents from file path
+    with open(in_file, "r", encoding="utf-8") as f:
+        fasta_str = f.read()
+
+    # Parse headers, sequences, and initialize matrix
+    header1, header2, seq1_array, seq2_array, matrix = parse_fa(fasta_str)
+
+    # Fill the scoring matrix (Needleman–Wunsch)
+    filled = fill_matrix(matrix, seq1_array, seq2_array)
+
+    # Trace back to get aligned sequences
+    aligned = trace_matrix(filled, seq1_array, seq2_array)
+    a1 = [str(x) for x in aligned[0].tolist()]
+    a2 = [str(x) for x in aligned[1].tolist()]
+
+    # Build consensus:
+    # - if both equal (non-gap), take that character
+    # - if one is gap, take the other character
+    # - if mismatch (both non-gap), use 'N'
+    consensus_chars = []
+    for x, y in zip(a1, a2):
+        if x == y:
+            consensus_chars.append(x.upper())
+        elif x == '-':
+            consensus_chars.append(y.upper())
+        elif y == '-':
+            consensus_chars.append(x.upper())
+        else:
+            consensus_chars.append('N')
+    consensus = ''.join(consensus_chars)
+
+    return consensus

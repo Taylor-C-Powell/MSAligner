@@ -39,7 +39,7 @@ This function implements the traceback step from the Needleman-Wunsch algorithm.
 ### 1.7. Complete the table below
 
 | Match Cost | Mismatch Cost | InDel Cost | Expected Alignnment of Sequence 1 | Expected Alignnment of Sequence 2 |
-| +2 | +2 | +4 | GCATGCG------- | -------GATTACA |
+| +2 | -2 | -4 | GCATGCG------- | -------GATTACA |
 | +1 | -1 | -1 | GCA-TGCG | -GATTACA |
 | +1 | -1 | -10 | GCATGCG | GATTACA |
 | +1 | -2 | -1 | ---GCATGCG | GATT-AC-A- |
@@ -50,7 +50,7 @@ This function implements the traceback step from the Needleman-Wunsch algorithm.
 ## 2. Complete these programming challenges
 
 Modify the Python3 project so that it completes the challenges below. Include a compressed version of your entire project, together with your responses above.
-
+2--
 ### 2.1. Report a consensus sequence representing the alignment of the two sequences
 
 To resolve this challenge, create a new package, separate from `newu2`.
