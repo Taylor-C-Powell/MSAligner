@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 
 # Example data
 data = {
@@ -38,4 +38,11 @@ plt.title('Score by Age')
 plt.xlabel('Age')
 plt.ylabel('Score')
 plt.grid(True)
+plt.show()
+
+counts = df['Result'].value_counts()
+plt.bar(counts.index, counts.values, color='skyblue')
+plt.title('Scores of Individuals')
+plt.xlabel('Result')
+plt.ylabel('Count')
 plt.show()

@@ -194,6 +194,12 @@ plt.grid(True)
 plt.show()
 ```
 
+When adding this code, it produces this file:
+
+See figure_1.png in the zip file
+
 ### Challenge: Create a bar plot showing how many students passed vs failed
 
 Create a bar plot showing how many students passed vs failed.
+
+See figure_2.png in the zip file
