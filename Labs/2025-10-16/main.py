@@ -98,6 +98,27 @@ class AlignmentRunner:
                 consensus_chars.append('N')
         self.consensus_str = ''.join(consensus_chars)
 
+    def find_mut_rate(self) -> None:
+        """
+        Calculate mutation rate from the aligned sequences.
+        """
+        a1 = [str(x) for x in self.aln[0].tolist()]
+        a2 = [str(x) for x in self.aln[1].tolist()]
+
+        matches = 0
+        mismatches = 0
+        for x, y in zip(a1, a2):
+            if x == '-' or y == '-':
+                mismatches += 1
+            elif x == y:
+                matches += 1
+            else:
+                mismatches += 1
+        length = len(a1)  # Length of the original sequence (with gaps)
+        self.mutation_rate = (mismatches / length) if length > 0 else 0.0
+
+
+
 def parse_args() -> argparse.Namespace:
     """
     Parse command-line arguments for the program.
@@ -181,6 +202,8 @@ def main() -> None:
     sys.stdout.write(f"The alignment was written into {args.output}\n")
     runner.consensus()
     sys.stdout.write(f"The consensus string is:\n{runner.consensus_str}\n")
+    runner.find_mut_rate()
+    sys.stdout.write(f"The mutation rate is: {runner.mutation_rate:.2%}\n")
 
 if __name__ == "__main__":
     main()
