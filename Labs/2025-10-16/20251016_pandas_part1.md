@@ -25,6 +25,8 @@ df = pandas.DataFrame(data)
 df
 ```
 
+This chunk of code has no output
+
 ## Run the following code and register its output
 
 ```python
@@ -41,12 +43,24 @@ df = pd.DataFrame(data)
 print(df)
 ```
 
+This chunk of code outputs a table representing the data within the df Pandas dataframe
+
+      Name  Age  Score
+0    Alice   25     88
+1      Bob   30     92
+2  Charlie   35     85
+3    Diana   40     90
+4    Ethan   45     87
+
 ## Challenge: What is the average score? What is the youngest age?
 
 Use Pandas methods to find:
 
 - The average score
 - The youngest age
+
+The average score is 88.4
+Th youngest age is 25
 
 ## Modifying a Dataframe
 
@@ -70,6 +84,15 @@ df["Result"] = new_data
 print(df)
 ```
 
+This code output the df dataframe with the new data appended to it
+
+      Name  Age  Score Result
+0    Alice   25     88   Fail
+1      Bob   30     92   Pass
+2  Charlie   35     85   Fail
+3    Diana   40     90   Pass
+4    Ethan   45     87   Fail
+
 ## Now add this and register the new output
 
 ```python
@@ -79,9 +102,33 @@ df['Result'] = df['Score'].apply(lambda x: 'Pass' if x >= 90 else 'Fail')
 print(df)
 ```
 
+This line of code modified the previous table to include a pass/fail column based on the person's score 
+
+      Name  Age  Score Result
+0    Alice   25     88   Fail
+1      Bob   30     92   Pass
+2  Charlie   35     85   Fail
+3    Diana   40     90   Pass
+4    Ethan   45     87   Fail
+
 ### Challenge: Add a new column that classifies people into 'Young' (<35) and 'Old' (>=35)
 
 Add a new column that classifies people into 'Young' (<35) and 'Old' (>=35).
+
+This is the line of code I added
+
+```python
+df['AgeGroup'] = df['Age'].apply(lambda x: 'Young' if x < 35 else 'Old')
+```
+
+And this is the resulting output:
+
+      Name  Age  Score Result AgeGroup
+0    Alice   25     88   Fail    Young
+1      Bob   30     92   Pass    Young
+2  Charlie   35     85   Fail      Old
+3    Diana   40     90   Pass      Old
+4    Ethan   45     87   Fail      Old
 
 ## Basic statistics with NumPy
 
@@ -100,9 +147,37 @@ print("Standard Deviation of Scores:", np.std(scores))
 print("Mean Age:", np.mean(ages))
 ```
 
+Adding these lines to the previous code block results in this output:
+
+      Name  Age  Score Result AgeGroup
+0    Alice   25     88   Fail    Young
+1      Bob   30     92   Pass    Young
+2  Charlie   35     85   Fail      Old
+3    Diana   40     90   Pass      Old
+4    Ethan   45     87   Fail      Old
+ages = [25 30 35 40 45]
+scores = [88 92 85 90 87]
+Standard Deviation of Scores: 2.416609194718914
+Mean Age: 35.0
+
 ### Challenge: What is the correlation between Age and Score?
 
 Use`np.corrcoef` to find the correlation.
+
+After adding code to find the correlation coefficient between Age and Score, here is the resulting output:
+
+      Name  Age  Score Result AgeGroup
+0    Alice   25     88   Fail    Young
+1      Bob   30     92   Pass    Young
+2  Charlie   35     85   Fail      Old
+3    Diana   40     90   Pass      Old
+4    Ethan   45     87   Fail      Old
+ages = [25 30 35 40 45]
+scores = [88 92 85 90 87]
+Standard Deviation of Scores: 2.416609194718914
+Mean Age: 35.0
+Correlation Coefficient between Age and Score: [[ 1., -0.23408229]
+ [-0.23408229, 1.]]
 
 ## Plotting with Matplotlib
 
