@@ -143,6 +143,11 @@ KRAS      2.8    2.5    3.0  2.77                     1.200
 Answer the following questions:
 
 1. What happens if one tissue has missing data for some genes?
+
+If an entry contains no data, denoted by a 'None' variable, then that variable is represented by a NaN symbol, and the value is not included in mathematical or statistical calculations.
+
+If an entry contains no data, denoted by a '0' value, then that variable is represented by an integer value of 0, and is included in amthematical and statistical calculations.
+
 2. How could you normalize these expression values across samples?
 3. How could you use `df.to_csv("gene_expression.csv")` to export the results?
 
