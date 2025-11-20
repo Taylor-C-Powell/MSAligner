@@ -77,7 +77,7 @@ print(correlation_matrix)
 
 Write your own interpretation of the results.
 
-> If the correlation between **`Mean_Expression`** and **`Mutations`** is high and positive (close to +1), it may suggest that highly expressed genes accumulate more mutations — a pattern sometimes seen in active genomic regions.
+> It seems that mean expression and the number of mutations are positively correlated variables. This means that, as one increases, the other is likely to increase. 
 
 ## Bonus Challenge
 
