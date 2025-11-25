@@ -2,6 +2,8 @@
 
 import pandas as pd
 
+# I added this line
+
 # Create the DataFrame
 data = {
     'Heart': [5.2, 3.3, 7.1, 4.5, 2.8],
