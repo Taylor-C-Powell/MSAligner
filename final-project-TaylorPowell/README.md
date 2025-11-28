@@ -1,5 +1,24 @@
-# final-project-TaylorPowell
-Project folder for BINF6112 final project<br>
-Written by Taylor C. Powell<br>
-ID: 801024945<br>
-Email: tpowel43@charlotte.edu<br>
+# Translation-Based Multiple Sequence Aligner
+
+A Python package for performing translation-based multiple sequence alignment using ORF detection, k-mer similarity, and Needleman-Wunsch alignment.
+
+## Project Overview
+
+This project implements a bioinformatics pipeline that:
+
+1. **Detects open reading frames (ORFs)** in nucleotide sequences
+2. **Translates sequences** into amino acids for alignment
+3. **Uses k-mer similarity** to sort sequences for progressive alignment
+4. **Performs pairwise alignment** with the Needleman-Wunsch algorithm
+5. **Back-translates** amino acid alignments into codon-aware nucleotide alignments
+6. **Generates codon position statistics** and visualizations
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd msaligner
+
+# Install the package
+pip install -e .
