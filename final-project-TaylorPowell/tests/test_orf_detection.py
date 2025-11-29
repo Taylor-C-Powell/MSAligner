@@ -9,7 +9,7 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 
-from src.msaligner.orf_detection import (
+from msaligner.orf_detection import (
     detect_orf, translate_sequence, read_fasta, 
     has_ambiguous_bases, process_sequences
 )

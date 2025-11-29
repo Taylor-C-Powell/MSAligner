@@ -4,7 +4,7 @@ Unit tests for statistics module.
 
 import pytest
 import pandas as pd
-from src.msaligner.statistics import calculate_codon_statistics, calculate_overall_statistics
+from msaligner.statistics import calculate_codon_statistics, calculate_overall_statistics
 
 def test_calculate_codon_statistics():
     """Test codon statistics calculation."""

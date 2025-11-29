@@ -3,7 +3,7 @@ Unit tests for alignment module.
 """
 
 import pytest
-from src.msaligner.alignment import (
+from msaligner.alignment import (
     needleman_wunsch, progressive_alignment, get_blosum_score
 )
 

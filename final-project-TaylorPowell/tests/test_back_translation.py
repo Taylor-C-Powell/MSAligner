@@ -3,7 +3,7 @@ Unit tests for back-translation module.
 """
 
 import pytest
-from src.msaligner.back_translation import (
+from msaligner.back_translation import (
     create_codon_alignment, back_translate_single_sequence, validate_codon_alignment
 )
 

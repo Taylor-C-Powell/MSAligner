@@ -3,7 +3,7 @@ Unit tests for k-mer similarity module.
 """
 
 import pytest
-from src.msaligner.kmer_similarity import (
+from msaligner.kmer_similarity import (
     generate_kmers, kmer_frequency, cosine_similarity, sort_sequences_by_similarity
 )
 
