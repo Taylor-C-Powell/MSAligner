@@ -104,7 +104,7 @@ def compute_kmer_similarity(sequences: Dict[str, dict], k: int = 6) -> np.ndarra
     
     return similarity_matrix, seq_ids
 
-def sort_sequences_by_similarity(sequences: Dict[str, dict], k: int = 6) -> List[str]:
+def sort_sequences_by_similarity(sequences: Dict[str, dict], k: int=6) -> List[str]:
     """
     Sort sequences for progressive alignment based on k-mer similarity.
     

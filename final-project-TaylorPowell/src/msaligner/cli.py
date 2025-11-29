@@ -97,13 +97,13 @@ def main():
         # Step 2: k-mer similarity and sorting
         logging.info("Step 2: Calculating k-mer similarity and sorting sequences")
         sorted_sequences = sort_sequences_by_similarity(
-            sequences_data, kmer_size=args.kmer_size
+            sequences_data, args.kmer_size
         )
         
         # Step 3: Progressive alignment
         logging.info("Step 3: Performing progressive alignment")
         aa_alignment = perform_progressive_alignment(
-            sorted_sequences, gap_penalty=args.gap_penalty
+            sorted_sequences, args.gap_penalty
         )
         
         # Step 4: Back-translation
