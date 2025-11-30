@@ -104,7 +104,7 @@ def compute_kmer_similarity(sequences: Dict[str, dict], k: int = 6) -> np.ndarra
     
     return similarity_matrix, seq_ids
 
-def sort_sequences_by_similarity(sequences: Dict[str, dict], k: int=6) -> List[str]:
+def sort_sequences_by_similarity(sequences: Dict[str, dict], k: int=6) -> Dict[str, dict]:
     """
     Sort sequences for progressive alignment based on k-mer similarity.
     
@@ -116,7 +116,7 @@ def sort_sequences_by_similarity(sequences: Dict[str, dict], k: int=6) -> List[s
         List of sequence IDs in optimal order for progressive alignment
     """
     if len(sequences) <= 1:
-        return list(sequences.keys())
+        return sequences
     
     similarity_matrix, seq_ids = compute_kmer_similarity(sequences, k)
     
@@ -144,4 +144,4 @@ def sort_sequences_by_similarity(sequences: Dict[str, dict], k: int=6) -> List[s
         remaining_ids.remove(best_seq)
     
     logging.info(f"Sorted {len(sorted_ids)} sequences by k-mer similarity")
-    return sorted_ids
+    return {seq_id: sequences[seq_id] for seq_id in sorted_ids}
