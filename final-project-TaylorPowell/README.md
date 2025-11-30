@@ -29,3 +29,11 @@ msaligner --input data/example1.fasta --outdir results
 # Other cli options
 masaligner --input data/example3.fasta --outdir results --kmer-size 23 --gap-penalty -6 --verbose
 ```
+
+## Testing
+
+```bash
+# Run test suite
+cd final-project-TaylorPowell
+pytest tests
+```

@@ -4,7 +4,7 @@ setup(
     name="msaligner",
     version="1.0.0",
     description="Translation-Based Multiple Sequence Aligner",
-    author="Student Name",
+    author="Taylor C. Powell",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
