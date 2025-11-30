@@ -1,6 +1,6 @@
 # Translation-Based Multiple Sequence Aligner
 
-A Python package for performing translation-based multiple sequence alignment using ORF detection, k-mer similarity, and Needleman-Wunsch alignment.
+A Python package for performing translation-based multiple sequence alignment using ORF detection, k-mer similarity, and the Needleman-Wunsch alignment.
 
 ## Project Overview
 
@@ -18,7 +18,12 @@ This project implements a bioinformatics pipeline that:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd msaligner
+cd final-project-TaylorPowell
 
 # Install the package
 pip install -e .
+
+# Running the aligner
+msaligner --input data/example.fasta --outdir results
+```
+
