@@ -37,3 +37,11 @@ masaligner --input data/example3.fasta --outdir results --kmer-size 23 --gap-pen
 cd final-project-TaylorPowell
 pytest tests
 ```
+
+## Use of AI
+
+Majority of the initial codebase and testing suite were generated using ChatGPT (GPT-5)
+
+Significant changes and adaptations were made during the debugging process
+
+Input datasets were manually curated
