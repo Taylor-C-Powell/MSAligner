@@ -27,7 +27,7 @@ pip install -e .
 msaligner --input data/example1.fasta --outdir results
 
 # Other cli options
-masaligner --input data/example3.fasta --outdir results --kmer-size 23 --gap-penalty -6 --verbose
+msaligner --input data/example3.fasta --outdir results --kmer-size 23 --gap-penalty -6 --verbose
 ```
 
 ## Testing
