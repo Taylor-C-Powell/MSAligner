@@ -116,6 +116,8 @@ def needleman_wunsch(seq1: str, seq2: str, gap_penalty: int = -8) -> Tuple[str, 
     aligned1 = ''.join(reversed(aligned1))
     aligned2 = ''.join(reversed(aligned2))
 
+    print(score_matrix)
+
     return aligned1, aligned2, score_matrix[m, n]
 
 def progressive_alignment(sequences: Dict[str, dict], sorted_ids: List[str], 

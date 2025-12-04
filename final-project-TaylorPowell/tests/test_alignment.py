@@ -21,6 +21,7 @@ def test_needleman_wunsch_identical():
     seq2 = "MAG"
     aligned1, aligned2, score = needleman_wunsch(seq1, seq2)
     assert aligned1 == aligned2 == "MAG"
+    print(score)
     assert score > 0
 
 def test_needleman_wunsch_gaps():
