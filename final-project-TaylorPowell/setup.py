@@ -14,6 +14,7 @@ setup(
         "pandas>=1.3.0",
         "matplotlib>=3.5.0",
         "biopython>=1.79",
+        "pytest>=7.0.0"
     ],
     entry_points={
         "console_scripts": [
