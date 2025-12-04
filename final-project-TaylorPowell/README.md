@@ -17,7 +17,7 @@ This project implements a bioinformatics pipeline that:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone <https://github.com/Taylor-C-Powell/BINF-6112.git>
 cd final-project-TaylorPowell
 
 # Install the package
