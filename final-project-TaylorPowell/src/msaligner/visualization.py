@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Visualization module for codon statistics and alignment results.
 """

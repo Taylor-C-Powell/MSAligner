@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 ORF detection and sequence translation module.
 """

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Translation-Based Multiple Sequence Aligner
 

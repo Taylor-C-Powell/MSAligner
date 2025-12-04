@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Sequence alignment module using Needleman-Wunsch algorithm.
 """

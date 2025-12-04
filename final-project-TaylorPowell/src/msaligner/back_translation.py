@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Back-translation module for converting amino acid alignments to codon alignments.
 """

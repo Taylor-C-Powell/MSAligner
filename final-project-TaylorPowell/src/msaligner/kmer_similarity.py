@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 k-mer similarity calculation and sequence sorting module.
 """
