@@ -1,1 +1,0 @@
-This folder contains scripts and documentation for using pandas dataframes to extract mengingful insights into gene expression data.

@@ -1,5 +1,0 @@
-AGTACACTGGT
-Complement: TCATGTGACCA
-Reverse Complement: ACCAGTGTACT
-Transcription: AGUACACUGGU
-Translation: STL

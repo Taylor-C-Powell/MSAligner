@@ -1,9 +1,0 @@
-I'm attempting to align three nucleotide sequences. The sequences are gene sequences for the HBA1 gene from three different organisms: homo sapiens (humans), equus asinus (Donkey), and panthera tigris (Tiger).
-
-I would like to have a python program that takes these three sequences and aligns them.
-
-The requirements for the program are as follows: 1. The input is a file containing three sequences (I'll paste the input file below). Each sequence has its own header that denotes which organism the sequence is. After each header is the nucleotide information that'll be used for the alignment procedure. 2. There should be two outputs, a score denoting the similarity between the three sequences and a score denoting the different between the two sequences. 3. The alignment scores should be determined using a protocol that's similar to currently used bioinformatics alignment programs (examples being BLAST, MAFFT, ClustalOmega, etc.).
-
-I would like you to generate a python program with adequate in-line comments that fulfill these three requirements. I'd also like you to provide a paragraph or two explaining the program and how it works. Thank you.
-
-(attached HBA1_sequences.fna file)
