@@ -17,8 +17,7 @@ This project implements a bioinformatics pipeline that:
 
 ```bash
 # Clone the repository
-git clone <https://github.com/Taylor-C-Powell/BINF-6112.git>
-cd final-project-TaylorPowell
+git clone <https://github.com/Taylor-C-Powell/MSAligner.git>
 
 # Install the package
 pip install -e .
