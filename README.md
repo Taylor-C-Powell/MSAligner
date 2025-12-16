@@ -33,6 +33,5 @@ msaligner --input data/example3.fasta --outdir results --kmer-size 23 --gap-pena
 
 ```bash
 # Run test suite
-cd final-project-TaylorPowell
 pytest tests
 ```
