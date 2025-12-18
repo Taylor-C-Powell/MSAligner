@@ -1,6 +1,6 @@
 # Translation-Based Multiple Sequence Aligner
 
-A Python package for performing translation-based multiple sequence alignment using ORF detection, k-mer similarity, and the Needleman-Wunsch alignmentalgorithm.
+A Python package for performing translation-based multiple sequence alignment using ORF detection, k-mer similarity, and the Needleman-Wunsch alignment algorithm.
 
 ## Project Overview
 
